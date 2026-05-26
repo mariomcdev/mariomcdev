@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CV de Mario Melgarejo — Ingeniero de Sistemas y Técnico Electrónico. Experiencia, formación y proyectos."
+    />
+    <title>Mario Melgarejo | CV · Sistemas & Electrónica</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ============================================================
+         NAVEGACIÓN — Edita enlaces y etiquetas aquí
+         ============================================================ -->
+    <header class="site-header">
+      <a href="#hero" class="logo" aria-label="Inicio">
+        <span class="logo__mark">MM</span>
+        <span class="logo__text">Mario Melgarejo</span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <a href="#hero">Inicio</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formación</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <!-- BOTÓN DESCARGAR CV — Cambia href si tienes PDF en /cv-mario-melgarejo.pdf -->
+      <a href="https://drive.google.com/file/d/1W2K1bPj1xxjq4h_63DwsouCKAdVFdo4Y/view?usp=drive_link" class="btn-cv" data-print-cv title="Imprimir o guardar como PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        CV
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        data-nav-toggle
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- ============================================================
+           HERO — Foto central: cambia src en .hero-face__img
+           Ruta obligatoria: img/profile-split.png
+           ============================================================ -->
+      <section id="hero" class="hero" aria-label="Hero interactivo">
+        <div class="hero__bg-grid" aria-hidden="true"></div>
+        <div class="hero__vignette" aria-hidden="true"></div>
+
+        <!-- Mitad izquierda: SISTEMAS -->
+        <div
+          class="hero__half hero__half--systems"
+          data-side="systems"
+          aria-hidden="true"
+        >
+          <div class="hero__glow hero__glow--cyan"></div>
+          <div class="hero__overlay hero__overlay--systems">
+            <div class="hud hud--systems" data-hud="systems">
+              <span class="hud__corner hud__corner--tl"></span>
+              <span class="hud__corner hud__corner--tr"></span>
+              <span class="hud__corner hud__corner--bl"></span>
+              <span class="hud__corner hud__corner--br"></span>
+              <span class="hud__badge">HUD · SYS</span>
+            </div>
+            <canvas class="particles" data-particles="systems" aria-hidden="true"></canvas>
+            <svg class="network-graph" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="var(--sys-cyan)" stop-opacity="0" />
+                  <stop offset="50%" stop-color="var(--sys-cyan)" stop-opacity="1" />
+                  <stop offset="100%" stop-color="var(--sys-violet)" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="network-graph__lines" data-network-lines></g>
+              <g class="network-graph__nodes" data-network-nodes></g>
+            </svg>
+            <div class="digital-lines" data-digital-lines aria-hidden="true"></div>
+            <!-- ICONOS SISTEMAS — Cambia SVG o clases en style.css (.icon-sys) -->
+            <div class="hero-icons hero-icons--systems">
+              <div class="icon-sys" data-icon="cloud" title="Cloud">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+              </div>
+              <div class="icon-sys" data-icon="ai" title="IA">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <div class="icon-sys" data-icon="cpu" title="CPU">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+              </div>
+              <div class="icon-sys" data-icon="network" title="Redes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2"/><path d="M5 12a7 7 0 0 1 14 0M8 19a9 9 0 0 1 8 0"/></svg>
+              </div>
+              <div class="icon-sys" data-icon="server" title="Servidor">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="18" r="1" fill="currentColor"/></svg>
+              </div>
+            </div>
+            <div class="hero__copy hero__copy--systems">
+              <p class="hero__tag">sys://profile</p>
+              <!-- TEXTO HERO SISTEMAS — Edita nombre y rol aquí -->
+              <h1 class="hero__name">Mario Melgarejo</h1>
+              <h2 class="hero__role">Ingeniería de Sistemas</h2>
+              <!-- ESPECIALIDADES SISTEMAS — Añade/quita <span> -->
+              <ul class="hero__tags-list">
+                <li>Cloud</li>
+                <li>IA</li>
+                <li>Redes</li>
+                <li>Automatización</li>
+                <li>Soporte TI</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mitad derecha: ELECTRÓNICA -->
+        <div
+          class="hero__half hero__half--electronics"
+          data-side="electronics"
+          aria-hidden="true"
+        >
+          <div class="hero__glow hero__glow--orange"></div>
+          <div class="hero__overlay hero__overlay--electronics">
+            <div class="hud hud--electronics" data-hud="electronics">
+              <span class="hud__corner hud__corner--tl"></span>
+              <span class="hud__corner hud__corner--tr"></span>
+              <span class="hud__corner hud__corner--bl"></span>
+              <span class="hud__corner hud__corner--br"></span>
+              <span class="hud__badge">HUD · HW</span>
+            </div>
+            <svg class="pcb" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <g class="pcb__traces" data-pcb-traces></g>
+              <g class="pcb__pads" data-pcb-pads></g>
+            </svg>
+            <div class="electric-pulses" data-electric-pulses aria-hidden="true"></div>
+            <div class="oscilloscope" data-oscilloscope aria-hidden="true">
+              <div class="oscilloscope__header">
+                <span>CH1 · 1kHz</span>
+                <span class="oscilloscope__live"><i></i> LIVE</span>
+              </div>
+              <canvas class="oscilloscope__wave" data-osc-wave></canvas>
+            </div>
+            <div class="sparks" data-sparks aria-hidden="true"></div>
+            <div class="hero__copy hero__copy--electronics">
+              <p class="hero__tag">hw://profile</p>
+              <!-- TEXTO HERO ELECTRÓNICA — Edita nombre y rol aquí -->
+              <h1 class="hero__name">Mario Melgarejo</h1>
+              <h2 class="hero__role">Técnico Electrónico</h2>
+              <!-- ESPECIALIDADES ELECTRÓNICA — Añade/quita <span> -->
+              <ul class="hero__tags-list">
+                <li>APC</li>
+                <li>UPS</li>
+                <li>Instrumentación</li>
+                <li>Potencia</li>
+                <li>CCTV</li>
+                <li>Hikvision</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOTO CENTRAL — Ruta obligatoria: img/profile-split.png
+             (incluido SVG temporal si aún no tienes el PNG; renombra o cambia src) -->
+        <div class="hero-face">
+          <div class="hero-face__clip hero-face__clip--left" data-face-half="left">
+            <img
+              src="img/profile-split.png"
+              alt="Mario Melgarejo — perfil dividido sistemas y electrónica"
+              class="hero-face__img"
+              width="100"
+              height="100"
+              data-profile-img
+            />
+          </div>
+          <div class="hero-face__clip hero-face__clip--right" data-face-half="right">
+            <img
+              src="img/profile-split.png"
+              alt=""
+              class="hero-face__img"
+              width="800"
+              height="1200"
+              aria-hidden="true"
+              data-profile-img
+            />
+          </div>
+          <div class="hero-face__divider" aria-hidden="true"></div>
+        </div>
+
+        <!-- Zonas hover (interacción) -->
+        <button
+          type="button"
+          class="hero__zone hero__zone--left"
+          data-zone="systems"
+          aria-label="Activar modo Ingeniería de Sistemas"
+        ></button>
+        <button
+          type="button"
+          class="hero__zone hero__zone--right"
+          data-zone="electronics"
+          aria-label="Activar modo Electrónica"
+        ></button>
+
+      <!--   <p class="hero__hint">Explora mi CV · pasa el cursor por cada perfil</p>-->
+      </section>
+
+      <!-- ============================================================
+           BARRA CV — Datos rápidos de contacto (edita aquí)
+           ============================================================ -->
+<!--       <div class="cv-bar cv-reveal">
+        <div class="cv-bar__inner">
+          <div class="cv-bar__item">
+            <span class="cv-bar__label">Ubicación</span>
+            <span>Perú-Lima</span>
+          </div>
+          <div class="cv-bar__item">
+            <span class="cv-bar__label">Email</span>
+            <a href="mailto:contacto@ejemplo.com">mario.melgarejo@gmail.com</a>
+          </div>
+          <div class="cv-bar__item">
+            <span class="cv-bar__label">Celular</span>
+            <a href="tel:+549000000000">+51 935 045 347</a>
+          </div>
+          <div class="cv-bar__item">
+            <span class="cv-bar__label">Disponibilidad</span>
+            <span>Híbrido</span>
+          </div>
+        </div>
+      </div>
+ -->
+      <!-- ============================================================
+           PERFIL — Edita resumen y datos de contacto
+           ============================================================ -->
+      <section id="perfil" class="cv-section cv-section--profile">
+        <div class="cv-wrap cv-grid cv-grid--profile">
+          <aside class="cv-sidebar glass cv-reveal">
+            <h2 class="cv-sidebar__title">Contacto</h2>
+            <ul class="cv-contact">
+              <li>
+                <span class="cv-contact__icon" aria-hidden="true">@</span>
+                <div>
+                  <span class="cv-contact__label">Email</span>
+                  <a href="mailto:contacto@ejemplo.com">mariomelgarejo.c@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="cv-contact__icon" aria-hidden="true">☎</span>
+                <div>
+                  <span class="cv-contact__label">Celular</span>
+                  <a href="tel:+549000000000">+51 935 045 347</a>
+                </div>
+              </li>
+              <li>
+                <span class="cv-contact__icon" aria-hidden="true">in</span>
+                <div>
+                  <span class="cv-contact__label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/" target="_blank" rel="noopener">linkedin.com/in/in/mario-melgarejo-10baa7142</a>
+                </div>
+              </li>
+              <li>
+                <span class="cv-contact__icon" aria-hidden="true">{ }</span>
+                <div>
+                  <span class="cv-contact__label">GitHub</span>
+                  <a href="https://github.com/" target="_blank" rel="noopener">Github.com/mariomcdev</a>
+                </div>
+              </li>
+            </ul>
+            <h3 class="cv-sidebar__subtitle">Perfiles</h3>
+            <div class="cv-badges">
+              <span class="cv-badge cv-badge--sys">Ingeniero de Sistemas</span>
+              <span class="cv-badge cv-badge--hw">Técnico Electrónico</span>
+            </div>
+          </aside>
+          <div class="cv-main cv-reveal">
+            <div class="section-head section-head--left">
+              <span class="section-head__eyebrow">// perfil</span>
+              <h2 class="section-head__title">Resumen profesional</h2>
+            </div>
+            <p class="cv-summary">
+              Profesional dual con formación en <strong>Ingeniería de Sistemas</strong> y experiencia
+              como <strong>Técnico Electrónico</strong>. Combino cloud, IA, redes y automatización
+              con soporte en campo: UPS/APC, CCTV Hikvision, instrumentación y potencia.
+            </p>
+            <div class="cv-highlights">
+              <article class="cv-highlight glass">
+                <span class="cv-highlight__num">2+</span>
+                <span class="cv-highlight__text">Áreas técnicas</span>
+              </article>
+              <article class="cv-highlight glass">
+                <span class="cv-highlight__num">N1</span>
+                <span class="cv-highlight__text">Soporte &amp; campo</span>
+              </article>
+              <article class="cv-highlight glass">
+                <span class="cv-highlight__num">2025</span>
+                <span class="cv-highlight__text">Egreso Sistemas</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia" class="cv-section">
+        <div class="cv-wrap">
+          <div class="section-head cv-reveal">
+            <span class="section-head__eyebrow">// experiencia</span>
+            <h2 class="section-head__title">Experiencia laboral</h2>
+            <p class="section-head__desc">Trayectoria en sistemas y electrónica.</p>
+          </div>
+          <div class="cv-track cv-track--systems cv-reveal">
+            <h3 class="cv-track__title"><span class="cv-track__dot"></span>Ingeniería de Sistemas</h3>
+            <div class="timeline timeline--cv">
+              <article class="timeline-card cv-entry">
+                <div class="timeline-card__dot"></div>
+                <div class="timeline-card__body glass">
+                  <div class="cv-entry__meta">
+                    <time datetime="2024">2024 — Presente</time>
+                    <span class="cv-entry__badge cv-entry__badge--sys">Sistemas</span>
+                  </div>
+                  <h4>Soporte Técnico N1</h4>
+                  <p class="cv-entry__company">Empresa / Cliente</p>
+                  <ul class="cv-entry__list">
+                    <li>Gestión de tickets, diagnóstico y escalamiento.</li>
+                    <li>Documentación y base de conocimiento.</li>
+                    <li>Soporte a usuarios, redes y servicios.</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="timeline-card cv-entry">
+                <div class="timeline-card__dot"></div>
+                <div class="timeline-card__body glass">
+                  <div class="cv-entry__meta">
+                    <time datetime="2025">2025</time>
+                    <span class="cv-entry__badge cv-entry__badge--sys">Formación</span>
+                  </div>
+                  <h4>Egreso Ingeniería de Sistemas</h4>
+                  <p class="cv-entry__company">Universidad / Instituto</p>
+                  <ul class="cv-entry__list">
+                    <li>Cloud, IA, redes y automatización.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="cv-track cv-track--electronics cv-reveal">
+            <h3 class="cv-track__title"><span class="cv-track__dot"></span>Técnico Electrónico</h3>
+            <div class="timeline timeline--cv">
+              <article class="timeline-card cv-entry">
+                <div class="timeline-card__dot"></div>
+                <div class="timeline-card__body glass">
+                  <div class="cv-entry__meta">
+                    <time datetime="2023">2023 — Presente</time>
+                    <span class="cv-entry__badge cv-entry__badge--hw">Electrónica</span>
+                  </div>
+                  <h4>Mantenimiento APC / UPS · CCTV</h4>
+                  <p class="cv-entry__company">Cliente / Campo</p>
+                  <ul class="cv-entry__list">
+                    <li>Baterías, pruebas de carga y continuidad.</li>
+                    <li>Hikvision, NVR y videovigilancia.</li>
+                    <li>Instrumentación, migraciones y soporte.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacion" class="cv-section cv-section--education">
+        <div class="cv-wrap">
+          <div class="section-head cv-reveal">
+            <span class="section-head__eyebrow">// formación</span>
+            <h2 class="section-head__title">Educación</h2>
+          </div>
+          <div class="cv-edu-grid cv-reveal">
+            <article class="cv-edu-card glass">
+              <time datetime="2025">2025</time>
+              <h3>Ingeniería de Sistemas</h3>
+              <p class="cv-edu-card__place">Universidad / Instituto</p>
+              <p>Egreso. Software, redes, cloud e IA.</p>
+            </article>
+            <article class="cv-edu-card glass">
+              <time datetime="2020">2020</time>
+              <h3>Técnico Electrónico</h3>
+              <p class="cv-edu-card__place">Escuela técnica</p>
+              <p>Potencia, instrumentación y reparación.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="habilidades" class="cv-section cv-section--skills">
+        <div class="cv-wrap cv-grid cv-grid--skills">
+          <div class="cv-skills-block cv-reveal">
+            <h3 class="cv-skills-block__title cv-skills-block__title--sys">Sistemas &amp; TI</h3>
+            <ul class="cv-skills">
+              <li class="cv-skill" data-level="85">
+                <div class="cv-skill__head"><span>Cloud</span><span>85%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+              <li class="cv-skill" data-level="80">
+                <div class="cv-skill__head"><span>Redes</span><span>80%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+              <li class="cv-skill" data-level="75">
+                <div class="cv-skill__head"><span>IA / Automatización</span><span>75%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+              <li class="cv-skill" data-level="90">
+                <div class="cv-skill__head"><span>Soporte TI N1</span><span>90%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="cv-skills-block cv-reveal">
+            <h3 class="cv-skills-block__title cv-skills-block__title--hw">Electrónica</h3>
+            <ul class="cv-skills">
+              <li class="cv-skill" data-level="88">
+                <div class="cv-skill__head"><span>APC / UPS</span><span>88%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+              <li class="cv-skill" data-level="82">
+                <div class="cv-skill__head"><span>CCTV Hikvision</span><span>82%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+              <li class="cv-skill" data-level="78">
+                <div class="cv-skill__head"><span>Instrumentación</span><span>78%</span></div>
+                <div class="cv-skill__bar"><span></span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="cv-skills-block cv-reveal">
+            <h3 class="cv-skills-block__title">Idiomas</h3>
+            <ul class="cv-tags">
+              <li>Español · Nativo</li>
+              <li>Inglés · Técnico</li>
+              <li>Windows / Linux</li>
+              <li>Git · Scripts</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="gallery-section cv-section">
+        <div class="section-head cv-reveal">
+          <span class="section-head__eyebrow">// portafolio</span>
+          <h2 class="section-head__title">Proyectos destacados</h2>
+          <p class="section-head__desc">Trabajos en carpeta <code>projects/</code>.</p>
+        </div>
+        <div class="gallery-grid" data-gallery-grid>
+          <p class="gallery-empty" data-gallery-empty hidden>
+            Añade imágenes en <strong>projects/</strong> y registra en <strong>script.js</strong>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER — Cambia URLs de LinkedIn, GitHub y correo
+         ============================================================ -->
+    <footer id="contacto" class="site-footer">
+      <div class="footer__glow" aria-hidden="true"></div>
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">MM</span>
+          <p>Mario Melgarejo · Sistemas & Electrónica</p>
+        </div>
+        <nav class="footer__links" aria-label="Redes sociales">
+          <!-- ENLACES FOOTER — Edita href -->
+          <a
+            href="https://linkedin.com/in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__link"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+          <a href="mailto:contacto@ejemplo.com" class="footer__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            Correo
+          </a>
+        </nav>
+        <p class="footer__copy">
+          &copy; <span data-year></span> Mario Melgarejo · CV interactivo.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
